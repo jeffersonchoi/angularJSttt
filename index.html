@@ -32,8 +32,12 @@
 		</div>
 	</div>
 
+	<div class ="refreshBoardButton"> 
+			<input type ="button" ng-click="MainCtrl.refreshBoard()" value="refresh">
+	</div>
+
 	<div class = "results">
-		<span ng-bind="MainCtrl.winner" ng-show="MainCtrl.resultShows">  </span>
+		<span ng-bind="MainCtrl.winner" ng-show="MainCtrl.resultShows"> </span>
 	</div>
 
 

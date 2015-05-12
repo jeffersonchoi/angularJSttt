@@ -21,6 +21,7 @@ angular
 		self.resultShows= false;
 		self.result = result;
 		self.winner="winner";
+		self.refreshBoard=refreshBoard;
 
 /* ask for name*/
 	function nameTyped() {
@@ -98,6 +99,14 @@ angular
 /*toogle result to appera when winner is determined*/
 	function result() {
 		self.resultShows = !self.resultShows;
+	}
+
+	function refreshBoard() {
+		self.playercount=1;
+		self.boxes=[];
+		self.counter=0;
+		self.resultShows= false;
+
 	}
 
 
