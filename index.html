@@ -18,9 +18,19 @@
 		<input type="button" ng-click="MainCtrl.nameTyped()" ng-show="MainCtrl.startingName" value="submit">
 	</div>
 
-
-	
-
+	<div class = "playBoard">
+		<div id = "outerbox">
+			<div id = "button1" class = "box" ng-click = "MainCtrl.whosTurn(0)">{{MainCtrl.boxes[0]}}</div>
+			<div id = "button2" class = "box" ng-click = "MainCtrl.whosTurn(1)">{{MainCtrl.boxes[1]}}</div>
+			<div id = "button3" class = "box" ng-click = "MainCtrl.whosTurn(2)">{{MainCtrl.boxes[2]}}</div>
+			<div id = "button4" class = "box" ng-click = "MainCtrl.whosTurn(3)">{{MainCtrl.boxes[3]}}</div>
+			<div id = "button5" class = "box" ng-click = "MainCtrl.whosTurn(4)">{{MainCtrl.boxes[4]}}</div>
+			<div id = "button6" class = "box" ng-click = "MainCtrl.whosTurn(5)">{{MainCtrl.boxes[5]}}</div>
+			<div id = "button7" class = "box" ng-click = "MainCtrl.whosTurn(6)">{{MainCtrl.boxes[6]}}</div>
+			<div id = "button8" class = "box" ng-click = "MainCtrl.whosTurn(7)">{{MainCtrl.boxes[7]}}</div>
+			<div id = "button9" class = "box" ng-click = "MainCtrl.whosTurn(8)">{{MainCtrl.boxes[8]}}</div>
+		</div>
+	</div>
 
 
 
