@@ -1,10 +1,28 @@
 * {
 	box-sizing: border-box;
+
 }
+.backgroundPic {
+	background-image: url("../images/beach.jpg");
+}
+.askForPlayersName, header, .refreshBoardButton {
+	text-align: center;
+}
+
+#anotherRound {
+	margin-top: 15px;
+	margin-right: 15px;
+}
+#newGame {
+	margin-top: 15px;
+	margin-left	: 15px;
+}
+
 .playBoard {
 	width: 300px;
 	height: 300px;
 	margin: 0 auto;
+	margin-top: 30px;
 	background-color: white;
 }
 
@@ -13,4 +31,6 @@
 	height: 100px;
 	border: 3px solid gray;
 	float: left;
+	text-align: center;
+	font-size: 100px;
 }

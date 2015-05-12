@@ -5,11 +5,12 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
-<body>
+<body class="backgroundPic">
 <div ng-controller="MainController as MainCtrl">
 	<header>
 		<h1 class="playersName"><span ng-bind="MainCtrl.p1name"></span> VS <span ng-bind="MainCtrl.p2name"></span></h1>
-		<h3 class="score"><span ng-bind="MainCtrl.p1score"></span> : <span ng-bind="MainCtrl.p2score"></span></h3>
+		<h2 class="score"><span ng-bind="MainCtrl.p1score"></span> : <span ng-bind="MainCtrl.p2score"></span></h2>
+		<h3 class="results"><span ng-bind="MainCtrl.winner" ng-show="MainCtrl.resultShows"> </span></h3>
 		</header>
 
 	<div class="askForPlayersName">
@@ -33,15 +34,8 @@
 	</div>
 
 	<div class ="refreshBoardButton"> 
-		<input type ="button" ng-click="MainCtrl.refreshBoard()" value="refresh">
-	</div>
-
-	<div class = "results">
-		<span ng-bind="MainCtrl.winner" ng-show="MainCtrl.resultShows"> </span>
-	</div>
-
-	<div class = "newGame">
-		<input type ="button" ng-click="MainCtrl.newGame()" value="NewGame">
+		<input type ="button" id = "anotherRound" ng-click="MainCtrl.refreshBoard()" value="Want Another Round?">
+		<input type ="button" id = "newGame"  ng-click="MainCtrl.newGame()" value="New Players?">
 	</div>
 
 

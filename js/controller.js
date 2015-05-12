@@ -30,17 +30,34 @@ angular
 		}
 
 /*determine who's turn, and pass in an argument*/
+	// function whosTurn(i) {
+	// 	if ((self.playercount %2 !== 0) && (self.winner =="winner")){
+	// 		self.playercount++;
+	// 		self.p1Turn(i);
+	// 		self.counter++;
+	// 	} else if ((self.playercount %2 == 0) && (self.winner == "winner")){
+	// 		self.playercount++;
+	// 		self.p2Turn(i);
+	// 		self.counter++;
+	// 	}
+	// }
+
 	function whosTurn(i) {
-		if ((self.playercount %2 !== 0) && (self.winner =="winner")){
+
+		if (self.winner!== "winner") {
+				return;
+			}
+		if (self.playercount %2 !== 0) {		
 			self.playercount++;
 			self.p1Turn(i);
 			self.counter++;
-		} else if ((self.playercount %2 == 0) && (self.winner == "winner")){
+		} else if (self.playercount %2 == 0) {
 			self.playercount++;
 			self.p2Turn(i);
 			self.counter++;
 		}
 	}
+
 /*determine who's turn*/
 	function p1Turn(i) {
 		if (self.boxes[i] != "x" && self.boxes[i] != "o") {
@@ -75,7 +92,7 @@ angular
 		   ((self.boxes[2] === "x") && (self.boxes[4] === "x") && (self.boxes[6] === "x"))) 
 			{ 	
 			self.p1score++;
-			self.winner="Player 1 wins";
+			self.winner=self.p1name+" wins";
 			self.result();
 			} 
 
@@ -89,11 +106,13 @@ angular
 			((self.boxes[2] === "o") && (self.boxes[4] === "o") && (self.boxes[6] === "o")))
 			{
 			self.p2score++;
-			self.winner="Player 2 wins";
+			self.winner=self.p2name + " wins";
 			self.result();
 			} 
-	else if (self.counter === 9) {
+	else if (self.counter === 8) {
+			console.log("tie")
 			self.winner="It is a tie!";
+			self.result();
 			}
 	}
 
@@ -118,9 +137,9 @@ angular
 		self.counter=0;
 		self.resultShows= false;
 		self.winner="winner";
+		self.p1score=0;
+		self.p2score=0;
 
 	}
-
-
 
 }
