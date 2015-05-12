@@ -22,6 +22,7 @@ angular
 		self.result = result;
 		self.winner="winner";
 		self.refreshBoard=refreshBoard;
+		self.newGame=newGame;
 
 /* ask for name*/
 	function nameTyped() {
@@ -30,11 +31,11 @@ angular
 
 /*determine who's turn, and pass in an argument*/
 	function whosTurn(i) {
-		if (self.playercount %2 !== 0) {
+		if ((self.playercount %2 !== 0) && (self.winner =="winner")){
 			self.playercount++;
-			self.counter++;
 			self.p1Turn(i);
-		} else if (self.playercount %2 == 0) {
+			self.counter++;
+		} else if ((self.playercount %2 == 0) && (self.winner == "winner")){
 			self.playercount++;
 			self.p2Turn(i);
 			self.counter++;
@@ -92,7 +93,7 @@ angular
 			self.result();
 			} 
 	else if (self.counter === 9) {
-			alert("Its a tie!");
+			self.winner="It is a tie!";
 			}
 	}
 
@@ -106,6 +107,17 @@ angular
 		self.boxes=[];
 		self.counter=0;
 		self.resultShows= false;
+		self.winner="winner";
+	}
+	function newGame() {
+		self.p1name="Player 1";
+		self.p2name="Player 2";
+		self.startingName= true;
+		self.playercount=1;
+		self.boxes=[];
+		self.counter=0;
+		self.resultShows= false;
+		self.winner="winner";
 
 	}
 
